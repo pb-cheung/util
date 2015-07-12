@@ -1,5 +1,5 @@
 #备注说明
-@[blog]
+[blog]
 
 ##JavaScript一些方法
 1. String.prototype.search(regexp)
@@ -27,8 +27,8 @@
 
 
 
-正则表达式
-cookie相关的例子
+##正则表达式
+###cookie相关的例子
 ```javascript
 var reg = new RegExp('(?:^|;\\s*)' + name + '=([^;]*)');
 ```
