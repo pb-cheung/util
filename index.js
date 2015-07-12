@@ -4,6 +4,8 @@ define(function(require,exports,module){
     function init(){
         console.log("index.js");
         getParam();
+        setCookie();
+        getCookie();
     }
 
     function getVersion(){
@@ -11,9 +13,18 @@ define(function(require,exports,module){
         $("#version").html(version);
     }
     function getParam(){
-        var parameter = util.getParam("name");
-        $("#getParam").html(parameter);
+        var testUrl = "http://www.qq.com?name=bocai&sex=&city=shenzhen&age=18"
+        var parameter = util.getParam("name",testUrl);
+        $("#getParam").html("测试链接：" + testUrl + "<br>参数name的值为："+parameter);
     }
+    function setCookie(){
+        util.setCookie("keys","abc",1);
+    }
+    function getCookie(){
+        var keys = util.getCookie("keys");
+        $("#getcookie").html(keys);
+    }
+
     init();
 
     module.exports = init;
